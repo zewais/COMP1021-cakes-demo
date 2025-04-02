@@ -28,7 +28,7 @@ jobs:
       - run: npm install
       - run: node server
         env:
-          DB_URI: ${{ secrets.DB_URI }}
+          DB_URI: "mongodb+srv://admin:database123456@cluster0.uw0rgqu.mongodb.net/cakes?retryWrites=true&w=majority&appName=Cluster0"
       - name: Deploy with GitHub Pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
