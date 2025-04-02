@@ -27,10 +27,11 @@ jobs:
           cache: "npm"
       - run: npm install
       - run: node server
+        env:
+          DB_URI: ${{ secrets.DB_URI }}
       - name: Deploy with GitHub Pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DB_URI: ${{ secrets.DB_URI }}
         run: |
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-          npm run deploy -- -u "github-actions-bot<support+actions@github.com"
+          npm run deploy -- -u "github-actions-bot<support+actions@github.com>"
