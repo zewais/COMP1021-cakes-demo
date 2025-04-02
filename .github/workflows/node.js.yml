@@ -30,7 +30,7 @@ jobs:
       - name: Deploy with GitHub Pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DB_URL: ${{ secrets.DB_URL }}
+          DB_URI: ${{ secrets.DB_URI }}
         run: |
           git remote set-url main
           https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
